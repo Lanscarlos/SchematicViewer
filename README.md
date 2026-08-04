@@ -4,13 +4,23 @@
 
 ## 开发
 
-```powershell
+```bash
 npm install
 npm run assets
 npm run dev
 ```
 
 `npm run assets` 会从 `.minecraft/versions/1.21.11/1.21.11.jar` 提取原版资源到 `public/minecraft`。生成目录不会提交到 Git。
+
+提取脚本 `scripts/extract-minecraft-assets.mjs` 使用 Node 内置模块解压 jar，跨平台（Linux / macOS / Windows）无需额外依赖。可通过环境变量或参数覆盖 jar 路径：
+
+```bash
+node scripts/extract-minecraft-assets.mjs /path/to/1.21.11.jar
+# 或
+MINECRAFT_JAR=/path/to/client.jar npm run assets
+# 指定其他版本目录
+MINECRAFT_VERSION=1.21.11 npm run assets
+```
 
 ## 测试样例
 

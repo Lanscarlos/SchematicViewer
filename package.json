@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "assets": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/extract-minecraft-assets.ps1",
+    "assets": "node scripts/extract-minecraft-assets.mjs",
     "samples": "node scripts/generate-samples.mjs",
     "generate:fountain": "node scripts/generate-quartz-fountain.mjs",
     "test": "node scripts/smoke-test.mjs && node scripts/schematic-writer-test.mjs && node scripts/quartz-fountain-test.mjs",
